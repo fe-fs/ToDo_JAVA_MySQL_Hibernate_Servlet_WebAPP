@@ -3,54 +3,67 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>ToDo List4</title>
-    <style>
-        body {
-            margin: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            color: #51455e;
-            background-color: #d3c2c6; /* pastel pink */
-        }
+<title>ToDo List4</title>
+<style>
+    body {
+        margin: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        color: #51455e;
+        background-color: #d3c2c6; /* pastel pink */
+    }
 
-        a {
-            display: inline-block;
-            padding: 10px 10px;
-            background-color: #a3c59f; /* pastel green */
-            color: #51455e;
-            border-radius: 50px; /* round corners */
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
+    a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 10px 10px;
+        background-color: #a3c59f; /* pastel green */
+        color: #51455e;
+        border-radius: 50px; /* round corners */
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
 
-        a:hover {
-            background-color: #b0a2c0; /* slightly darker pastel green */
-        }
+    a:hover {
+        background-color: #b0a2c0; /* slightly darker pastel green */
+    }
 
-        table {
-            width: 90%;
-            padding: 10px 10px;
-            border-radius: 50px;
-            border-collapse: separate;
-            border-spacing: 3px;
-            font-size: 12px;
-            table-layout: fixed;
-            word-wrap: break-word;
-            border: none;
-            background-color: #d3e7d3; /* pastel green */
-            text-align: center;
-        }
-        table, th, td {
-            border: none;
-        }
-        table tr:first-child {
-            border: none;
-            border-radius: 50px;
-            font-size: 20px;
-            background-color: #a3c59f;
-        }
+    table {
+        width: 90%;
+        padding: 10px 10px;
+        border-radius: 50px;
+        border-collapse: separate;
+        border-spacing: 3px;
+        font-size: 15px;
+        table-layout: fixed;
+        word-wrap: break-word;
+        border: none;
+        background-color: #d3e7d3; /* pastel green */
+        text-align: center;
+    }
+    table, th, td {
+        border: none;
+    }
+    table tr:first-child {
+        border: none;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    Header{
+        margin: 10px;
+        font-size: 30px;
+        background-color: #b0a2c0; /* pastel green */
+        text-align: center;
 
-    </style>
+    }
+    footer{
+        font-size: 10px;
+        background-color: #b0a2c0; /* pastel green */
+        text-align: center;
+
+    }
+
+</style>
 </head>
 <body>
 <center>

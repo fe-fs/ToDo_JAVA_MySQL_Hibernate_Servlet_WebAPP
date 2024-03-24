@@ -15,6 +15,7 @@
 
         a {
             display: inline-block;
+            font-size: 20px;
             padding: 10px 10px;
             background-color: #a3c59f; /* pastel green */
             color: #51455e;
@@ -45,16 +46,29 @@
         }
         table tr:first-child {
             border: none;
-            border-color: #a3c59f;
             border-radius: 50px;
             font-size: 20px;
+        }
+        Header{
+            margin: 10px;
+            font-size: 30px;
+            background-color: #b0a2c0; /* pastel green */
+            text-align: center;
+        }
+        footer{
+            font-size: 10px;
+            background-color: #b0a2c0; /* pastel green */
+            text-align: center;
         }
 
     </style>
 </head>
 <body>
 <center>
-    <h1>ToDo List 4</h1>
+    <header>
+        <h1>ToDo List 4</h1>
+    </header>
+
     <h2>
         <a href="new">Add New ToDo</a>
         &nbsp;&nbsp;&nbsp;
@@ -86,6 +100,9 @@
         </c:forEach>
     </table>
 </div>
-<h3>By Fernanda Silva - github: </h3>
+<footer>
+    <h3>By Fernanda Silva - https://github.com/fe-fs</h3>
+</footer>
+
 </body>
 </html>
