@@ -1,16 +1,23 @@
-package com.example.todo4;
+/*Modulo 07 - Assignment
+ * Java Todo List Application with Hibernate and MySQL database
+ * Name: Fernanda Frederico Ribeiro da Silva
+ * Class: Software Development II CEN-4025C-24671
+ * Professor: Walauskis
+ */
 
+
+package com.example.todo4;
 import javax.persistence.*;
 
 /**
- * User.java
+ * User.java >>Re-wrote from old Entity_db class
  * This is a model class represents a User entity
  *
  */
 
-@Entity
+@javax.persistence.Entity
 @Table(name="todo_list")
-public class User {
+public class Entity {
 
     @Id //primary key of the entity
     @GeneratedValue(strategy = GenerationType.IDENTITY) //This annotation specifies the generation strategies for the values of primary keys.
@@ -22,16 +29,16 @@ public class User {
 
     @Column(name = "is_done")
     private int is_done;
-    public User() {
+    public Entity() {
     }
 
-    public User(String description, int is_done) {
+    public Entity(String description, int is_done) {
         super();
         this.description = description;
         this.is_done = is_done;
     }
 
-    public User(int id, String description, int is_done){
+    public Entity(int id, String description, int is_done){
         this.id = id;
         this.description = description;
         this.is_done = is_done;

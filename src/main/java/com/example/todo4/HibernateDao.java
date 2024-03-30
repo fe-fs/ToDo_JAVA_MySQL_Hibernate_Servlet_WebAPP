@@ -1,25 +1,31 @@
-package com.example.todo4;
+/*Modulo 07 - Assignment
+ * Java Todo List Application with Hibernate and MySQL database
+ * Name: Fernanda Frederico Ribeiro da Silva
+ * Class: Software Development II CEN-4025C-24671
+ * Professor: Walauskis
+ */
 
+
+package com.example.todo4;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-
-public class UserDao {
+public class HibernateDao {
 
     /**
      * Save User
-     * @param user
+     * @param user from entity class
      */
-    public void saveUser(User user) {
+    public static void saveEntity(Entity entity) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
             // save the student object
-            session.save(user);
+            session.save(entity);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -31,16 +37,16 @@ public class UserDao {
     }
 
     /**
-     * Update User
-     * @param user
+     * Update Entity
+     * @param entity
      */
-    public void updateUser(User user) {
+    public static void updateEntity(Entity entity) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
             // update the user object
-            session.merge(user);
+            session.merge(entity);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -55,7 +61,7 @@ public class UserDao {
      * Delete User
      * @param id
      */
-    public void deleteUser(int id) {
+    public static void deleteEntity(int id) {
 
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -63,9 +69,9 @@ public class UserDao {
             transaction = session.beginTransaction();
 
             // Delete a user object
-            User user = session.get(User.class, id);
-            if (user != null) {
-                session.delete(user);
+            Entity entity = session.get(Entity.class, id);
+            if (entity != null) {
+                session.delete(entity);
                 System.out.println("Todo is deleted");
             }
 
@@ -84,15 +90,15 @@ public class UserDao {
      * @param id
      * @return
      */
-    public User getUser(int id) {
+    public Entity getEntity(int id) {
 
         Transaction transaction = null;
-        User user = null;
+        Entity entity = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
             // get an user object
-            user = session.get(User.class, id);
+            entity = session.get(Entity.class, id);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -101,7 +107,7 @@ public class UserDao {
             }
             e.printStackTrace();
         }
-        return user;
+        return entity;
     }
 
     /**
@@ -109,16 +115,16 @@ public class UserDao {
      * @return
      */
     @SuppressWarnings("unchecked")
-    public List< User > getAllUser() {
+    public List< Entity > getAllEntity() {
 
         Transaction transaction = null;
-        List < User > listOfUser = null;
+        List < Entity > listOfEntity = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
             // get an user object
 
-            listOfUser = session.createQuery("from User").getResultList();
+            listOfEntity = session.createQuery("from Entity").getResultList();
 
             // commit transaction
             transaction.commit();
@@ -128,6 +134,6 @@ public class UserDao {
             }
             e.printStackTrace();
         }
-        return listOfUser;
+        return listOfEntity;
     }
 }

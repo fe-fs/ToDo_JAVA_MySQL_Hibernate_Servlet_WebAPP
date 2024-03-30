@@ -1,3 +1,13 @@
+<!--Modulo 07 - Assignment
+* Java Todo List Application with Hibernate and MySQL database
+* Name: Fernanda Frederico Ribeiro da Silva
+* Class: Software Development II CEN-4025C-24671
+* Professor: Walauskis
+
+See Todo Items -  user-list.jsp page
+-->
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -85,16 +95,16 @@
             <th>Is Done?</th>
             <th>Actions</th>
         </tr>
-        <c:forEach var="user" items="${listUser}">
+        <c:forEach var="entity" items="${list}">
             <tr>
-                <td><c:out value="${user.id}" /></td>
-                <td><c:out value="${user.description}" /></td>
-                <td><c:out value="${user.is_done == 1 ? 'Yes' : 'No'}" /></td>
+                <td><c:out value="${entity.id}" /></td>
+                <td><c:out value="${entity.description}" /></td>
+                <td><c:out value="${entity.is_done == 1 ? 'Yes' : 'No'}" /></td>
 
                 <td>
-                    <a href="edit?id=<c:out value='${user.id}' />">Edit</a>
+                    <a href="edit?id=<c:out value='${entity.id}' />">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="delete?id=<c:out value='${user.id}' />">Delete</a>
+                    <a href="delete?id=<c:out value='${entity.id}' />">Delete</a>
                 </td>
             </tr>
         </c:forEach>

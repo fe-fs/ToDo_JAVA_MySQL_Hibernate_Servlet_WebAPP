@@ -1,10 +1,11 @@
-package com.example.todo4;/*Modulo 05 - Assignment
+/*Modulo 07 - Assignment
  * Java Todo List Application with Hibernate and MySQL database
  * Name: Fernanda Frederico Ribeiro da Silva
  * Class: Software Development II CEN-4025C-24671
  * Professor: Walauskis
  */
 
+package com.example.todo4;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -38,7 +39,7 @@ public class HibernateUtil {
 
                 configuration.setProperties(settings);
 
-                configuration.addAnnotatedClass(User.class); //The entity class here
+                configuration.addAnnotatedClass(Entity.class); //The entity class here
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
